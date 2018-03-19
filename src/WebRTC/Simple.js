@@ -58,15 +58,9 @@ var Simple = function (options) {
 
   this.options = options;
 
-  // https://stackoverflow.com/questions/7944460/detect-safari-browser
-  var browserUa = global.navigator.userAgent.toLowerCase();
-  var isSafari = false;
-  if (browserUa.indexOf('safari') > -1 && browserUa.indexOf('chrome') < 0) {
-    isSafari = true;
-  }
   var sessionDescriptionHandlerFactoryOptions = {};
-  if (isSafari) {
-    sessionDescriptionHandlerFactoryOptions.modifiers = [SIP.WebRTC.Modifiers.stripG722];
+  if(options.sessionDescriptionHandlerFactoryOptions) {
+    sessionDescriptionHandlerFactoryOptions = options.sessionDescriptionHandlerFactoryOptions;
   }
 
   if (!this.options.ua.uri) {
