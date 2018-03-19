@@ -59,8 +59,8 @@ var Simple = function (options) {
   this.options = options;
 
   var sessionDescriptionHandlerFactoryOptions = {};
-  if(options.sessionDescriptionHandlerFactoryOptions) {
-    sessionDescriptionHandlerFactoryOptions = options.sessionDescriptionHandlerFactoryOptions;
+  if(this.options.ua.sessionDescriptionHandlerFactoryOptions) {
+    sessionDescriptionHandlerFactoryOptions = this.options.ua.sessionDescriptionHandlerFactoryOptions;
   }
 
   if (!this.options.ua.uri) {
